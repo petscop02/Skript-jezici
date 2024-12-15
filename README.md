@@ -1,4 +1,5 @@
 # Skript-jezici
 ### install python (https://www.python.org/downloads/release/python-3120/)
-## install packeges in requirements.txt via cmd (global) (pip install package or just pip install -r path_to_requirements.txt)
-## for flask-session there might be an error for cpp build tools, if so go to https://visualstudio.microsoft.com/visual-cpp-build-tools/
+### you can install packeges globaly (via cmd) or locally (open folder in a text editor / IDE) 
+### to install use one of these options (pip install name_of_package or just pip install -r path_to_requirements.txt)
+### for flask-session there might be an error for cpp build tools, if so go to https://visualstudio.microsoft.com/visual-cpp-build-tools/
