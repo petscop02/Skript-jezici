@@ -1,0 +1,17 @@
+*
+{
+    overflow-x: hidden;
+}
+#user
+{   
+    pointer-events: none;
+    color:rgb(255,255,255)
+}
+#delete
+{
+    color:red;
+}
+#delete:hover
+{
+    text-decoration: none;
+}
