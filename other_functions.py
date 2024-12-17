@@ -52,14 +52,14 @@ class PDF:
         self.title = title
         self.choice = choice
     
-    def write(self,title,choice,image):
+    def write(self,title,choice,why,image):
         self = fpdf.FPDF('L')
         self.add_page()
         self.set_font('Times','B',16)
         self.cell(0,0,"Statistics",0,0,'C')
         self.set_font('Times','',16)
-        self.write(10,f"Hello {title}! Your chosen object was {choice}! Why though? Why did you choose {choice}?\n") 
-        self.write(15,f"I hope that you do not regret yout desicion...")
-        self.cell(1,80)
-        self.image(image,w=200,h=150)
+        self.write(10,f"Hello {title}! Your chosen object was {choice}! Why though? Why did you choose {choice}?\n")
+        self.write(15,f"{title}: '{why}'\n") 
+        self.write(20,f"I hope that you do not regret yout desicion...")
+        self.image(image,x=50,y=60,w=200,h=150)
         self.output("static/a.pdf")
