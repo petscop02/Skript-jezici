@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %} Register {% endblock %}
+{% block main %} 
+<div class="container">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h3 style="margin-top: 65%; text-align: center;">Register</h3>
+        <form action="/register" method="post">
+            <input class="form-control w-auto" type="email" placeholder="E-mail (NE TREBA PRAVI (samo ko hoce))" name="email" style="margin-bottom: 20px; font-size: large;" required>
+            <input class="form-control w-auto" autocomplete="off" name="username" placeholder="Username" style="margin-bottom: 20px; font-size: large;" required>
+            <input class="form-control w-auto" type="password" name="password" placeholder="Password" style="margin-bottom: 20px; font-size: large;" required>
+            <input class="form-control w-auto" type="password" name="password2" placeholder="Password again" style="margin-bottom: 20px; font-size: large;" required>
+            <button type="submit" class="btn btn-primary" style="font-size: large;">Register</button> 
+        </form>
+        <h3 style="text-align: center; margin-top: 20px; font-size: medium;">{{error_message}}</h3>
+    </div>
+</div>
+{% endblock %}
