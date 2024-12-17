@@ -213,7 +213,6 @@ def about():
 @login_required
 def choose():
     if request.method == "GET":
-        download = False
         return render_template("choose.html",history=db.execute("SELECT * FROM history"))
     else:
         list1 = []
@@ -221,7 +220,6 @@ def choose():
         dict2 = {}
         choice = request.form.get("choice")
         check = request.form.get('check')
-        download = False
         new_past = 0
 
         pom = session["user_id"] #posto je session["user_id"] lista u kom se nalazi recnik
@@ -267,11 +265,13 @@ def choose():
         pdf.write(pdf.title,pdf.choice,"static/graph.png")
         
         if check == None:
-            download = False
+            pass
         else:
-            download = True
-            return render_template("choose.html",download=download,history = db.execute("SELECT * FROM history"))
-        return render_template("choose.html",history = db.execute("SELECT * FROM history"))
+            render_template("choose.html",history = db.execute("SELECT * FROM history"))
+            download_file = "static/a.pdf"
+            return send_file(download_file,as_attachment=True)
+        render_template("choose.html",history = db.execute("SELECT * FROM history"))
+        return redirect(url_for("choose"))
 
 
 app.run()
