@@ -45,7 +45,7 @@ def send_mail(email):
     message.send(email,'Code',str(code))
     return check
     
-yagmail.register('email','password')
+yagmail.register('email','password') # placeholder
 
 class PDF:
     def __init__(self,title,choice):
