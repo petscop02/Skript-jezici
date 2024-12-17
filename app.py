@@ -220,6 +220,7 @@ def choose():
         dict2 = {}
         choice = request.form.get("choice")
         check = request.form.get('check')
+        why = request.form.get('why')
         new_past = 0
 
         pom = session["user_id"] #posto je session["user_id"] lista u kom se nalazi recnik
@@ -262,7 +263,7 @@ def choose():
         plt.close()
 
         pdf = PDF(session["user_name"],choice)
-        pdf.write(pdf.title,pdf.choice,"static/graph.png")
+        pdf.write(pdf.title,pdf.choice,why,"static/graph.png")
         
         if check == None:
             pass
