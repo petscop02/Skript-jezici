@@ -2,9 +2,7 @@ from flask import redirect, session
 from functools import wraps
 from random import randint
 import yagmail
-import os
 import fpdf
-import PyPDF2
 
 def check_password_characters(psw):
     count1 = 0
