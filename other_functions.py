@@ -37,7 +37,7 @@ def login_required(f):
     return decorated_function
 
 def send_mail(email):
-    message = yagmail.SMTP('dimitrijegajic55@gmail.com')
+    message = yagmail.SMTP('host_email')
     code = randint(1000,1000000)
     check = str(code)
     message.send(email,'Code',str(code))
